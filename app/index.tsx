@@ -1,6 +1,6 @@
-import { View, StyleSheet, Text, SafeAreaView, StatusBar } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView, StatusBar, Image, Button, TextInput } from 'react-native';
 import { Svg } from 'react-native-svg';
-// import Pie from "@/assets/images/pie.svg";
+import pie from '@/assets/images/pie.png';
 
 export default function HomeScreen() {
   return (
@@ -12,56 +12,37 @@ export default function HomeScreen() {
         </View>
 
         <View style={styles.centered}>
-          <Svg height="100" width="100">
-
-          </Svg>
+          <Image source={pie} style={{ width: 130, height: 130, marginTop: 10, marginBottom: 40 }} />
+          <View style={styles.gridContainer}>
+            <View style={styles.row}>
+              <Button
+                title="BUTTON"
+                color="gray" />
+              <Button
+                title="BUTTON"
+                color="gray" />
+            </View>
+            <View style={styles.row}>
+              <Button
+                title="BUTTON"
+                color="gray" />
+              <Button
+                title="BUTTON"
+                color="gray" />
+            </View>
+          </View>
+          <View>
+            <View style={styles.stepContainer}>
+              <Text>Email:</Text>
+              <TextInput
+                style={styles.textInput}
+                placeholder=""
+              />
+            </View>
+          </View>
         </View>
       </SafeAreaView>
     </View>
-    // <ParallaxScrollView
-    //   headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-    //   headerImage={
-    //     <Image
-    //       source={require('@/assets/images/partial-react-logo.png')}
-    //       style={styles.reactLogo}
-    //     />
-    //   }>
-    //   <ThemedView style={styles.titleContainer}>
-    //     <ThemedText type="title">Welcome!</ThemedText>
-    //     <HelloWave /
-    //   </ThemedView>
-    //   <ThemedView style={styles.stepContainer}>
-    //     <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-    //     <ThemedText>
-    //       Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-    //       Press{' '}
-    //       <ThemedText type="defaultSemiBold">
-    //         {Platform.select({
-    //           ios: 'cmd + d',
-    //           android: 'cmd + m',
-    //           web: 'F12'
-    //         })}
-    //       </ThemedText>{' '}
-    //       to open developer tools.
-    //     </ThemedText>
-    //   </ThemedView>
-    //   <ThemedView style={styles.stepContainer}>
-    //     <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-    //     <ThemedText>
-    //       Tap the Explore tab to learn more about what's included in this starter app.
-    //     </ThemedText>
-    //   </ThemedView>
-    //   <ThemedView style={styles.stepContainer}>
-    //     <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-    //     <ThemedText>
-    //       When you're ready, run{' '}
-    //       <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-    //       <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-    //       <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-    //       <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-    //     </ThemedText>
-    //   </ThemedView>
-    // </ParallaxScrollView>
   );
 }
 
@@ -87,7 +68,25 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: 'white',
   },
+  gridContainer: {
+    width: '100%',
+    alignItems: 'center',
+    gap: 20,
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '65%',
+  },
   stepContainer: {
-    marginBottom: 8,
-  }
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  textInput: {
+    width: '70%',
+    borderColor: 'red',
+    borderBottomWidth: 2,
+  },
 });
