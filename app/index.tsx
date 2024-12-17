@@ -4,7 +4,7 @@ import pie from '@/assets/images/pie.png';
 
 export default function HomeScreen() {
   return (
-    <View>
+    <View style={{ backgroundColor: 'white', height: '100%' }}>
       <StatusBar backgroundColor="#1a574b" barStyle="light-content" />
       <SafeAreaView style={styles.container}>
         <View style={styles.appbar}>
@@ -75,8 +75,9 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     width: '65%',
+    gap: 20,
   },
   stepContainer: {
     flexDirection: 'row',
